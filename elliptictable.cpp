@@ -86,7 +86,7 @@ QVariant EllipticTable::data(const QModelIndex &index, int role) const
         return Qt::AlignRight;
     if (index.row() >= mEntries.size()) return QVariant();
     const EllipticPoint& pdata =  mEntries.at(index.row());
-    if (role == Qt::TextColorRole)
+    if (role == Qt::ForegroundRole)
     {
         if (pdata.isOnCurve()) return QColor(Qt::black);
         return QColor(Qt::darkRed);

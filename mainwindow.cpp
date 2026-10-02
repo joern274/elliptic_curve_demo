@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     mScene = new EllipticScene(this);
     ui->graphicsView->setScene(mScene);
     QHBoxLayout*ll = new QHBoxLayout(ui->legend);
-    ll->setMargin(3);
+    ll->setContentsMargins(3,3,3,3);
     ui->legend->setAutoFillBackground(true);
 //    on_spinMod_valueChanged(g_mod_p);
     connect(mScene,&EllipticScene::pointSelected,this,&MainWindow::handlePointClicked);
@@ -197,7 +197,7 @@ void MainWindow::generateLegend()
     {
         l = new QLabel(QString::number(it.key()),this);
         QPalette pal = l->palette();
-        pal.setColor(QPalette::Background,it.value());
+        pal.setColor(QPalette::Window,it.value());
         l->setPalette(pal);
         l->setAutoFillBackground(true);
         l->setMaximumWidth(36);
